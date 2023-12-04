@@ -58,7 +58,7 @@ pub fn list(reset: &str, red: &str, cyan: &str, yellow: &str) {
                 }
                 let usefile = "terminal";
                 let outputfile = "0";
-                modeng::engaucanberra(&original_text, usefile, outputfile, reset, red, cyan, yellow);
+                modeng::engaucanberra(&original_text);
                 println!();
             }
         }
@@ -86,11 +86,11 @@ pub fn list(reset: &str, red: &str, cyan: &str, yellow: &str) {
                     let option: &str = answer.trim();
 
                     if option == "o" {
-                        modeng::engaucanberra(&original_text, usefile, &outputfile, reset, red, cyan, yellow);
+                        modeng::engaucanberra(&original_text);
                         println!("File {}", outputfile + " overwritten");
                     } else if option == "a" {
                         let usefile = "old";
-                        modeng::engaucanberra(&original_text, usefile, &outputfile, reset, red, cyan, yellow);
+                        modeng::engaucanberra(&original_text);
                         println!("Data appended to the file {outputfile}");
                     } else {
                         println!("Operation aborted");
@@ -99,7 +99,7 @@ pub fn list(reset: &str, red: &str, cyan: &str, yellow: &str) {
                 }
                 // FILE DOES NOT EXIST: ENGLISH IPA
 
-                modeng::engaucanberra(&original_text, usefile, &outputfile, reset, red, cyan, yellow);
+                modeng::engaucanberra(&original_text);
                 println!("Data written to the file {outputfile}");
                 return;
             }
@@ -121,11 +121,11 @@ pub fn list(reset: &str, red: &str, cyan: &str, yellow: &str) {
                     let option: &str = answer.trim();
 
                     if option == "o" {
-                        modeng::engaucanberra(&original_text, usefile, outputfile, reset, red, cyan, yellow);
+                        modeng::engaucanberra(&original_text);
                         println!("File {}", outputfile.clone() + " overwritten");
                     } else if option == "a" {
                         let usefile = "old";
-                        modeng::engaucanberra(&original_text, usefile, outputfile, reset, red, cyan, yellow);
+                        modeng::engaucanberra(&original_text);
                         println!("Data appended to the file {outputfile}");
                     } else {
                         println!("Operation aborted");
@@ -134,7 +134,7 @@ pub fn list(reset: &str, red: &str, cyan: &str, yellow: &str) {
                 }
                 // FILE DOES NOT EXIST: ENGLISH IPA
 
-                modeng::engaucanberra(&original_text, usefile, outputfile, reset, red, cyan, yellow);
+                modeng::engaucanberra(&original_text);
                 println!("Data written to the file {outputfile}");
                 return;
             }
@@ -145,7 +145,7 @@ pub fn list(reset: &str, red: &str, cyan: &str, yellow: &str) {
         let original_text = str0;
         let usefile = "terminal";
         let outputfile = "0";
-        modeng::engaucanberra(&original_text, usefile, outputfile, reset, red, cyan, yellow);
+        modeng::engaucanberra(&original_text);
         println!();
         return;
     }

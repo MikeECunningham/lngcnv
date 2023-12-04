@@ -49,7 +49,7 @@ fn engpncend(strmod: &str) -> String {
 
 // ENGLISH: IPA
 
-pub fn engaucanberra(original_text: &str, usefile: &str, outputfile: &str, reset: &str, red: &str, cyan: &str, yellow: &str) {
+pub fn engaucanberra(original_text: &str) -> String {
     let dotend = original_text.to_owned() + ".";
     let dotbeg = ".".to_owned() + &dotend;
     let lowercase = &dotbeg.to_lowercase();
@@ -1026,30 +1026,7 @@ pub fn engaucanberra(original_text: &str, usefile: &str, outputfile: &str, reset
 
     let result = engpncend(strmod);
 
-    if usefile == "new" {
-        let mut file = std::fs::File::create(outputfile).expect(&(red.to_owned() + "The output file could not be created!" + reset));
-        file.write_all("CANBERRA, ACT, AU:".as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-        file.write_all("\n".as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-        file.write_all("\n".as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-        file.write_all(result.as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-        file.write_all("\n".as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-    }
-    if usefile == "old" {
-        let mut file = OpenOptions::new().append(true).open(outputfile).expect(&(red.to_owned() + "cannot open file" + reset));
-        file.write_all("CANBERRA, ACT, AU:".as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-        file.write_all("\n".as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-        file.write_all("\n".as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-        file.write_all(result.as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-        file.write_all("\n".as_bytes()).expect(&(red.to_owned() + "write failed" + reset));
-    }
-    if usefile == "terminal" {
-        println!();
-        println!("{}", cyan.to_owned() + "Canberra" + reset + ", " + cyan + "ACT" + reset + ", " + cyan + "AU" + reset + ":");
-        println!();
-        print!("{yellow}");
-        println!("{result}");
-        print!("{reset}");
-    }
+    result
 }
 
 //   ++++++++++   ++++++++++   ++++++++++
