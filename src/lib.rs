@@ -14,7 +14,7 @@ enum Language {
   English
 }
 
-pub fn english_ipa(input: String) {
+pub fn english_ipa(input: String) -> String {
   let text: &str = input.trim();
-  modeng::engaucanberra(&text);
+  modeng::engaucanberra(&text)
 }
